@@ -1,0 +1,39 @@
+import java.io.*; 
+import java.net.*;
+ 
+class Server
+{
+   public static void main(String argv[]) throws Exception
+      {
+ 
+   		 System.out.println(" Server is Running  " );
+         ServerSocket mysocket = new ServerSocket(5555);
+ 
+         while(true)
+         {
+            Socket connectionSocket = mysocket.accept();
+ 
+            BufferedReader reader =
+            		new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
+            BufferedWriter writer= 
+            		new BufferedWriter(new OutputStreamWriter(connectionSocket.getOutputStream()));
+ 
+            writer.write("*** Welcome to Music Heals ***\r\n");            
+            writer.write("*** Would you like to make an appointment type Y/N : \n");
+            writer.flush();
+            String data1 = reader.readLine().trim();
+ 
+            writer.write("*** Would you like a playlist to listen to? Y/N : \n");
+            writer.flush();
+            String data2 = reader.readLine().trim();
+ 
+            
+            ;            
+            System.out.println("What kind of music do you listen too " );
+ 
+            writer.write("\r\n=== Here is your playlist  : ");
+            writer.flush();
+            connectionSocket.close();
+         }
+      }
+}
