@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+Please enter your log-in information<br>
+<form action ="Login.php" method="post">
+User Name: <input type ="text" name="user"><br><br>
+Password: <input type ="text" name="passw"><br><br>
+Submit: <input type ="submit" name="Submit">
+</form>
+</body>
+</html>
