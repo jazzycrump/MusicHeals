@@ -11,4 +11,15 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 echo "Connected successfully";
+
+//opens txt file database
+$myfile = fopen("Server.txt", "r") or die("Unable to open file!");
+echo fgets($myfile);
+fclose($myfile);
+
+// Output one line until end-of-file
+while(!feof($myfile)) {
+  echo fgets($myfile) . "<br>";
+}
+fclose($myfile);
 ?>
