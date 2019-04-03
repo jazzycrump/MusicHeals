@@ -2,9 +2,12 @@
 <html>
     <head>
         <title>Health Questions</title>
+        <link rel="stylesheet" type="text/css" href="homepage.css" />
         <meta charset="UTF-8">
     </head>
-        <form action ="Questions-translator.php" method="post">
+         
+    <body>
+        <form action ="Questions-translator.php" method="post"/>
 <p>What is your gender?
     <br>
 <input type="radio" name="gender" value="F"/> Female
@@ -15,12 +18,12 @@
 <p>Have you ever been tested for mental health conditions?
     <br>
 <input type="radio" name="yes" value="Yes" /> Yes
-<input type="radio" name="no" value="No" /> No </p>
+<input type="radio" name="no" value="No" /> No</p>
 <br>
 
 <p>Overall how would you rate your mental health?
     <br>
-<input type="radio" name="e" value="E" checked="checked"/> Excellent
+<input type="radio" name="e" value="E"/> Excellent
 <input type="radio" name="sg" value="SG" /> Somewhat good
 <input type="radio" name="a" value="A" /> Average
 <input type="radio" name="sp" value="SP" /> Somewhat poor
@@ -52,6 +55,5 @@
 <input type="radio" name="naw" value="Naw" /> No
 <input type="radio" name="idk" value="idk"/> Not sure</p>
 <br>
-
-<p> 
+    </body>
 </html>
