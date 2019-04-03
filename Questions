@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Health Questions</title>
+        <meta charset="UTF-8">
+    </head>
+        <form action ="Questions-translator.php" method="post">
+<p>What is your gender?
+    <br>
+<input type="radio" name="gender" value="F"/> Female
+<input type="radio" name="gender" value="M" /> Male
+<br>
+<br>        
+ 
+<p>Have you ever been tested for mental health conditions?
+    <br>
+<input type="radio" name="yes" value="Yes" /> Yes
+<input type="radio" name="no" value="No" /> No </p>
+<br>
+
+<p>Overall how would you rate your mental health?
+    <br>
+<input type="radio" name="e" value="E" checked="checked"/> Excellent
+<input type="radio" name="sg" value="SG" /> Somewhat good
+<input type="radio" name="a" value="A" /> Average
+<input type="radio" name="sp" value="SP" /> Somewhat poor
+<input type="radio" name="p" value="P" /> Poor
+<input type="radio" name="nc" value="NC" /> Not Certain
+</p>
+<br>
+
+<p>How many months has it been since you were last tested for your mental health?
+    <br>
+<input type="radio" name="one" value="1" checked="checked"/> 1 month
+<input type="radio" name="three" value="3" /> 3 months
+<input type="radio" name="six" value="6"/> 6 months
+<input type="radio" name="nine" value="9"/> 9 months
+<input type="radio" name="twelve" value="12"/> 12 or more months
+</p>
+<br>
+
+<p>In the past couple of months, have you felt like your emotions have been overwhelming and controlling your life?
+    <br>
+<input type="radio" name="y" value="Y" checked="checked"/> Yes
+<input type="radio" name="n" value="N" /> No
+<input type="radio" name="ns" value="NS"/> Not sure</p>
+<br>
+
+<p>Have any of your close relatives in your family(mother, father, siblings, grandparents, first cousins) ever dealt with mental health issues?
+    <br>
+<input type="radio" name="yea" value="Yea" checked="checked"/> Yes
+<input type="radio" name="naw" value="Naw" /> No
+<input type="radio" name="idk" value="idk"/> Not sure</p>
+<br>
+
+<p> 
+</html>
