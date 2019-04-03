@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<form method="post" action="login.php">
+<form method="post" action="Register-translator.php">
 
 <table style="border: none">
 <tr>
@@ -38,7 +38,7 @@
 </tr>
 <tr>
 <td>
-  <input type="submit" value="submit" />
+  <input type="submit" value="Submit" />
 </td>
 </tr>
 </table>
