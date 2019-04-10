@@ -22,7 +22,7 @@ public class JdbcSelect {
          int rowCount = 0;
          while(rset.next()) {   // Move the cursor to the next row, return false if no more row
             String users = rset.getString("users");
-            String password = rset.getDouble("password");
+            String password = rset.getString("password");
             System.out.println(users+ ", " + password);
             ++rowCount;
          }
