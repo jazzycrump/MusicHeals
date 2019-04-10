@@ -1,6 +1,6 @@
 import java.sql.*;  // Using 'Connection', 'Statement' and 'ResultSet' classes in java.sql package
 
- //list all users
+ **//list all users within the system.
 public class JdbcSelect {  
    public static void main(String[] args) {
       try (
@@ -33,7 +33,7 @@ public class JdbcSelect {
    }
 }
 
-//Update database
+**//Update database after changes.
 public class JdbcUpdate {  
    public static {
       try (
@@ -62,7 +62,7 @@ public class JdbcUpdate {
    }
 }
 
-//insert/delete users
+**//insert/delete users by the admin.
 public class JdbcInsert {    
    public static {
       try (
