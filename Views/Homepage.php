@@ -30,8 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
   <div class="form">
       
       <ul>
-        <li class="tab"><a href="#signup">Sign Up</a></li>
-        <li class="tab active"><a href="#login">Log In</a></li>
+        <li>><a href="#signup">Sign Up</a></li>
+        <li> <a href="#login">Log In</a></li>
       </ul>
       
       
@@ -57,15 +57,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             <input type="password" required autocomplete="off" name="password"/>
           
           
-          <p class="forgot"><a href="forgot.php">Forgot Password?</a></p>
-          
           <button type='submit' name="login" />Log In</button>
 
         </div>
         <div id="signup">   
           <h1>Sign Up for MusicHeals</h1>
           
-          <form action="index.php" method="post" autocomplete="off">
+          <form action="Homepage.php" method="post" autocomplete="off">
           
           
               <label>
