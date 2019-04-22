@@ -1,0 +1,43 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ * Description of TestCaseError
+ *
+ * @author Brandon Vanhook
+ */
+    <?php {
+class MyTestError
+{
+    private $errors;
+
+    protected function setUp() {
+        $this->errors = array();
+        set_error_handler(array($this, "errorHandler"));
+    }
+
+    public function errorHandler($username, $password) {
+        $this->errors[] = compact("username", "password");
+    }
+
+    public function assertError($username, $password) {
+        foreach ($this->errors as $error) {
+            if ($error["errstr"] === $errstr
+                && $error["errno"] === $errno) {
+                return;
+            }
+        }
+        $this->fail("Error with userr " . $username . "' not found in " . $password . 
+                , var_export($this->errors, TRUE));
+    }
+
+    public function testErrorCase() {
+        // execute code that triggers a warning
+        $this->assertError("username not found",
+            E_USER_WARNING);
+    }
+}
+?>
