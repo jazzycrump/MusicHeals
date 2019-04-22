@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     }
     // Check to see if this is a register.
 } else {
-    header("location:http://localhost/UserModel.php");
+    header("location:http://localhost/Register.php");
 }
 
 
