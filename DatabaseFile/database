@@ -1,0 +1,62 @@
+/**
+* database where users and passwords are saved
+*
+*author: Brandon Vanhook
+*
+
+<?php
+
+class TextDatabase {
+
+    public static $ourData = array();
+
+    public static function createRecord() {
+       insert into data.txt ($name, $password) $values = ('mary','lamb')
+               commit;
+    }
+
+    public static function findUserByNameAndPassword($name, $password) {
+        static::loadNewRecord();
+        foreach(static::$ourData as $record) {
+            if ($record['username'] = $name && $record['password'] == $password) {
+                return $record;
+            }
+        }
+        return false;
+    }
+
+    public static function updateNewRecord($record, $name, $password){
+         if ($record['username'] = $name && $record['password']== $password ==''){
+        ("UPDATE database with new user data = '" . $name . $password . "',
+             username , password = WHERE data = " . $name . + . $password .)
+        }
+        else {
+            return 'user data was not entered correctly';
+        }
+
+        }
+
+    public static function deleteNewRecord(){
+       require_once("Includes/data.txt");
+   Data::getInstance()->delete_data ($_POST["Username", "Password"])
+        header('Location: data.txt' );
+
+    }
+
+    protected static function loadNewRecord() {
+        if (empty(static::$ourData)) {
+            $file = fopen("../data/data", "r");
+            while(!feof($file)){
+              $record = fgets($file);
+              $pairs = explode("|", $record);
+              $recordArray = array();
+              foreach ($pairs as $pair) {
+                  $pairArray = explode("=", $pair);
+                  $recordArray[$pairArray[0]] = $pairArray[1];
+              }
+              array_push(static::$ourData, $recordArray);
+            }
+            fclose($file);
+        }
+    }
+}
