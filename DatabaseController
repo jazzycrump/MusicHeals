@@ -1,3 +1,4 @@
+<?php 
 /*
  * 
  * 
@@ -7,11 +8,11 @@
  * @author Brandon Vanhook
  */
  
- <?php session_start();
+ session_start();
 
 //verify user logon
 if (!array_key_exists("user", $_SESSION)) {
-    header('Location: data.php');
+    header('Location: TextDatabase.php');
     exit;
     
 require_once("../models/data.php");
@@ -20,15 +21,19 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
    
    // Check to see if this is a login.
     if ($_POST['form-type'] == "login") {
-        // Call up text database to see if user exists.
+        
+// Call up text database to see if user exists.
+    }
         $user = User::login($_POST['username'], $_POST['password']);
         if ($user)  {
             header("location:http://localhost/homepage.php");
-        } else {
+        } 
+        else {
             header("location:http://localhost/error.php");
         }
     } 
-} else {
+} 
+else {
     header("location:http://localhost");
 }
 ?>
