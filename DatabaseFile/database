@@ -7,7 +7,7 @@
 
 class TextDatabase {
 
-//Write data in the format $data = array("username: buddy , password: lov123");
+//Write data in the format $data = array("username: buddy , password: lov123").;
 public static function createRecord($data) {
 
     $my_file = 'data.txt';
@@ -20,7 +20,7 @@ public static function createRecord($data) {
 
     fclose($handle);
 }
-//For instance, 'username:Roscoe , password: Worldpeace123'
+//For instance, 'username:Roscoe , password: Worldpeace123'.
 public static function updateNewRecord($data){
     $my_file = 'data.txt';
     $handle = fopen($my_file, 'a') or die('Cannot open file: '.$my_file);
@@ -33,19 +33,19 @@ public static function updateNewRecord($data){
 
 public static function deleteNewRecord(){
 
-    //Load all data to array
+    //Load all new data to an array. 
     $contents=TextDatabase::loadNewRecord();
     //Remove 1 record
     array_pop($contents);
 
-   //Put data back to the file
+   //Put data back into the file.
     $my_file = 'data.txt';
 
-    //Clear record
+    //Clear record of all stray data.
     $handle = fopen($my_file, 'w') or die('Cannot open file: '.$my_file);
     fclose($handle);
 
-    //Put new data back to it
+    //Put new data back into to the file.
     TextDatabase::createRecord($contents);
 
     echo ("user was successfully deleted");
@@ -53,13 +53,13 @@ public static function deleteNewRecord(){
 
 
 public static function loadNewRecord(){
-    //Load content
+    //Load content from the file.
     $my_file = 'data.txt';
     $handle = fopen($my_file, 'r') or die('Cannot open file: '.$my_file);
     $r=array();
     while(!feof($handle)){
 
-   //Read string of this handle (file)
+   //Read string of this handle (file).
        $content=fgets($handle);
       array_push ($r, $content);
     }
