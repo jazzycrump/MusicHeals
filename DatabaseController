@@ -15,7 +15,7 @@ if (!array_key_exists("user", $_SESSION)) {
     header('Location: TextDatabase.php');
     exit;
     
-require_once("../models/data.php");
+require_once("../models/TextDatabase.php");
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
    
