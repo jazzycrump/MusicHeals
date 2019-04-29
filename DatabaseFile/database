@@ -12,7 +12,8 @@ public static function createRecord($data) {
     
     $my_file = 'data.txt';
     $handle = fopen($my_file, 'w') or die('Cannot open file: '.$my_file);
-    //Writes each array contents
+    
+//Writes each array contents
     foreach($data as $d){
         fwrite($handle, $d);
     }
@@ -31,9 +32,13 @@ public static function updateNewRecord($data){
 
 
 public static function deleteNewRecord(){ 
-    $contents=TextDatabase::loadNewRecord();  //Load all data to array
-    array_pop($contents);       //Remove last record
-    //Put data back to the file
+
+    //Load all data to array
+    $contents=TextDatabase::loadNewRecord();
+    //Remove 1 record
+    array_pop($contents); 
+    
+   //Put data back to the file
     $my_file = 'data.txt';
     
     //Clear record
