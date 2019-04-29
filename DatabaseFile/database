@@ -1,45 +1,62 @@
 <?php
 /**
- * Description of the Database
- *
- * @author Brandon Vanhook
- */
+* Database class 
+*  
+* @author Brandon Vanhook
+*/
 
 class TextDatabase {
 
-   public static function createRecord() {
-     $my_file = 'data.txt';
-     $handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
-     $data = 'username: buddy , password: lov123';
-     fwrite($handle, $data);
-     fclose($handle);
+//Write data in the format $data = array("username: buddy , password: lov123");
+public static function createRecord($data) {
+    
+    $my_file = 'data.txt';
+    $handle = fopen($my_file, 'w') or die('Cannot open file: '.$my_file);
+    //Writes each array contents
+    foreach($data as $d){
+        fwrite($handle, $d);
+    }
+    
+    fclose($handle);
+}
+//For instance, 'username:Roscoe , password: Worldpeace123'
+public static function updateNewRecord($data){
+    $my_file = 'data.txt';
+    $handle = fopen($my_file, 'a') or die('Cannot open file: '.$my_file);
+ 
+    $new_data = "\n".$data;
+    fwrite($handle, $new_data);
+    fclose($handle);
 }
 
-    public static function updateNewRecord(){
-      $my_file = 'data.txt';
-      $handle = fopen($my_file, 'a') or die('Cannot open file:  '.$my_file);
-      $data = 'username: buddy , password: lov123';
-      fwrite($handle, $data);
-      $new_data = "\n".'username:Roscoe  , password: Worldpeace123';
-      fwrite($handle, $new_data);
-      fclose($handle);
-   }
+
+public static function deleteNewRecord(){ 
+    $contents=TextDatabase::loadNewRecord();  //Load all data to array
+    array_pop($contents);       //Remove last record
+    //Put data back to the file
+    $my_file = 'data.txt';
+    
+    //Clear record
+    $handle = fopen($my_file, 'w') or die('Cannot open file: '.$my_file);
+    fclose($handle);           
+     
+    //Put new data back to it
+    TextDatabase::createRecord($contents);
+
+    echo ("user was successfully deleted"); 
+} 
 
 
-    public static function deleteNewRecord(){
-        
-      $my_file = 'data.txt';
-      fwrite($data);
-      unlink($my_file);
-      fclose($data);
-          
-      echo ("user was successfully deleted"); 
-    } 
- 
-
-    public static function loadNewRecord() {
-       $my_file = 'data.txt';
-       $handle = fopen($my_file, 'w') or die('Cannot open file:  '.$my_file);
+public static function loadNewRecord() {
+    $my_file = 'data.txt';
+    $handle = fopen($my_file, 'r') or die('Cannot open file: '.$my_file);
+    $r=array();         //Load content
+    while(!feof($handle)){
+        $content=fgets($handle);        //Read string of this handle (file)
+        array_push ($r, $content);
     }
+    fclose($handle);
+    return $r;
+}
 }
 ?>
