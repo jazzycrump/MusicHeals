@@ -20,7 +20,7 @@
     header('Location: TextDatabase.php');
     exit;
     
-require_once("../models/TextDatabase.php");
+require_once("../data/data.txt");
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
    
