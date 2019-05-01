@@ -6,7 +6,7 @@
 //*
 		$username = $_POST["username"];
 		$password = $_POST["password"];
-		$file = fopen("data.txt","w+") or die("file not open");
+		$file = fopen("data.txt","r+") or die("file not open");
 		fwrite($file,$username."\n".$password);
 		fclose($file);
 	?>
