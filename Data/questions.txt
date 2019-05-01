@@ -1,0 +1,10 @@
+Question1 = Have you ever went to a professional therapist for help?|
+Question2 = During the last 4 weeks, have you had any bad migraine?
+Question3 = During the last 4 weeks, have you had any hot or cold spells?
+Question4 = During the last 4 weeks, have you had any feeling of weakness in parts of your body? 
+Question=During the last 4 weeks, have you been feeling fearful? 
+Question=During the last 4 weeks, have you been feeling extreme sadness?
+Question=During the last 4 weeks, have you been prescribed any depression medicine?
+Question=During the last 4 weeks, have you had any thoughts about self harm?
+Question=During the last 4 weeks, have you been feeling hopeless about your future?
+Question=During the last 4 weeks, have you felt any extreme loneliness?
