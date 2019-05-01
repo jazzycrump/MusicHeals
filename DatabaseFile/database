@@ -7,20 +7,37 @@
 
 class TextDatabase {
 
-//Write data in the format $data = array("username: buddy , password: lov123").;
+/**
+* Write data in the format $data = array("username: buddy , password: lov123").;
+*
+* @author Brandon Vanhook
+*/
+
 public static function createRecord($data) {
 
     $my_file = 'data.txt';
     $handle = fopen($my_file, 'w') or die('Cannot open file: '.$my_file);
 
-//Writes each array contents
+/**
+* Writes data into contents;
+*
+* @author Brandon Vanhook
+*/
+
     foreach($data as $d){
         fwrite($handle, $d);
     }
+    
+    sort($data);
 
     fclose($handle);
 }
-//For instance, 'username:Roscoe , password: Worldpeace123'.
+/**
+* Update record with new user into data.txt file
+*
+* @author Brandon Vanhook
+*/
+
 public static function updateNewRecord($data){
     $my_file = 'data.txt';
     $handle = fopen($my_file, 'a') or die('Cannot open file: '.$my_file);
@@ -33,33 +50,55 @@ public static function updateNewRecord($data){
 
 public static function deleteNewRecord(){
 
-    //Load all new data to an array. 
+    /**
+    * Load all data into an array .;
+    *
+    * @author Brandon Vanhook
+    */
     $contents=TextDatabase::loadNewRecord();
-    //Remove 1 record
-    array_pop($contents);
+    
+    
+    /**
+    * Deletes a user by username.;
+    *
+    * @author Brandon Vanhook
+    */
 
-   //Put data back into the file.
+    $key = false; 
+    foreach ($user as $username => $line){
+      if ($username === $line){
+       $key = $username;
+    }
+    }
+
+   /**
+    * places data back into the txt file.;
+    *
+    * @author Brandon Vanhook
+    */
     $my_file = 'data.txt';
 
-    //Clear record of all stray data.
-    $handle = fopen($my_file, 'w') or die('Cannot open file: '.$my_file);
-    fclose($handle);
-
-    //Put new data back into to the file.
-    TextDatabase::createRecord($contents);
-
+    
     echo ("user was successfully deleted");
 }
 
 
 public static function loadNewRecord(){
-    //Load content from the file.
-    $my_file = 'data.txt';
+    /**
+    * Loads new data file with new entry previously made.
+    *
+    * @author Brandon Vanhook
+    */
+    $my_file;
     $handle = fopen($my_file, 'r') or die('Cannot open file: '.$my_file);
     $r=array();
     while(!feof($handle)){
 
-   //Read string of this handle (file).
+   /**
+    * Reads the string of new data file.
+    *
+    * @author Brandon Vanhook
+    */
        $content=fgets($handle);
       array_push ($r, $content);
     }
