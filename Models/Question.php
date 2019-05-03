@@ -4,7 +4,7 @@
  * This is the questions model where the users will go after gaining access 
  * 
  * 
- * @author Jasmine Crump
+ * @author Brandon Vanhook
  */
 
 
